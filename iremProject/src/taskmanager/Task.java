@@ -1,4 +1,4 @@
-package main;
+package taskmanager;
 
 // Bu sınıf, yapılacak bir görevi temsil eder
 // Task(görev) tamamlanabilir olduğu için Completable interface'ini kullanır

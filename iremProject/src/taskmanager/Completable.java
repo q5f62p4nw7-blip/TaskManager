@@ -1,4 +1,4 @@
-package main;
+package taskmanager;
 
 // Bu interface, bir görevin tamamlanabilmesini sağlar
 // Bu arayüzü kullanan sınıflar complete() metodunu yazmak zorundadır.
