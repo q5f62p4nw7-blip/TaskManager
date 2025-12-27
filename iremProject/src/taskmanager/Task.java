@@ -37,6 +37,12 @@ public class Task implements Completable {
         return completed;
     }
 
+    // Normal Task'ların deadline'ı yoktur, bu yüzden upcoming değildir
+    public boolean isUpcoming() {
+    return false;
+    }
+
+
     // Interface metodu
     // Görevi tamamlandı olarak işaretler
     @Override
