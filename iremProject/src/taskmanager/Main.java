@@ -21,9 +21,8 @@ public class Main {
         );
 
         // Create a deadline for a timed task
-        Deadline deadline = new Deadline(
-                LocalDate.now().plusDays(3)
-        );
+        Deadline deadline = new Deadline(LocalDate.now().plusDays(3));
+
 
         // Create a timed task (task with deadline)
         TimedTask task2 = new TimedTask(
@@ -49,5 +48,6 @@ public class Main {
         // Send a notification (optional feature)
         Notification notification = new Notification();
         notification.send("Program finished successfully.");
+
     }
 }
