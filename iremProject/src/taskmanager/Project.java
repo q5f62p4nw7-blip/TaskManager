@@ -42,4 +42,18 @@ public class Project {
             }
         }
     }
+
+    // Displays completed tasks
+    public void showCompletedTasks() {
+        System.out.println("Completed tasks:");
+
+        for (Task task : tasks) {
+            if (task.isCompleted()) {
+            System.out.println("- " + task.getTitle());
+            }
+        }
+    }
+
 }
+
+    

@@ -42,6 +42,10 @@ public class Main {
         // Display upcoming (not completed) tasks
         project.showUpcomingTasks();
 
+        // Display completed tasks
+        project.showCompletedTasks();
+
+
         // Send a notification (optional feature)
         Notification notification = new Notification();
         notification.send("Program finished successfully.");

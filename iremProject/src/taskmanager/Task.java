@@ -52,4 +52,7 @@ public class Task implements Completable {
         this.completed = true; // This task has now been completed
         System.out.println("Görev tamamlandı: " + title); // Informs the user
     }
+
+    
+
 }
