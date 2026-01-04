@@ -1,10 +1,10 @@
 package taskmanager;
 
-// Bu interface, bir görevin tamamlanabilmesini sağlar
-// Bu arayüzü kullanan sınıflar complete() metodunu yazmak zorundadır.
+// This interface allows a task to be completed
+// Classes that use this interface must implement the complete() method
 public interface Completable {
 
-    // Tamamlama işlemini temsil eder
+    // Represents the completion process
     void complete();
 
 

@@ -1,20 +1,20 @@
 package taskmanager;
 
-// Bu sınıf, son teslim tarihi olan görevleri temsil eder
-// Task sınıfından türetilmiştir (inheritance)
+// This class represents tasks with a deadline
+// It is derived from the Task class (inheritance)
 public class TimedTask extends Task {
 
-    // Görevin son teslim tarihi
+    // Task deadline
     private Deadline deadline;
 
     // Constructor
-    // TimedTask oluşturulurken görev bilgileri ve deadline ayarlanır
+    // Sets the task details and deadline when a TimedTask is created
     public TimedTask(String title, String description, Deadline deadline) {
-        super(title, description); // Task sınıfının constructor'ı çağrılır
+        super(title, description); // The constructor of the Task class is called
         this.deadline = deadline;
     }
 
-    // Görevin son teslim tarihini verir
+    // Returns the task deadline
     public Deadline getDeadline() {
         return deadline;
     }

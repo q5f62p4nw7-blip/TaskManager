@@ -2,24 +2,24 @@ package taskmanager;
 
 import java.time.LocalDate;
 
-// Bu sınıf, bir görevin son teslim tarihini temsil eder
+// This class represents the deadline of a task
 public class Deadline {
 
-    // Son teslim tarihi
+    // Deadline
     private LocalDate dueDate;
 
     // Constructor
-    // Deadline nesnesi oluşturulurken tarih ayarlanır
+    // The date is set when the Deadline object is created
     public Deadline(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
 
-    // Son teslim tarihini verir
+    // Returns the deadline
     public LocalDate getDueDate() {
         return dueDate;
     }
 
-    // Görev henüz süresi dolmamış mı kontrol eder
+   // Checks whether the task has not yet expired
     public boolean isUpcoming() {
         return dueDate.isAfter(LocalDate.now());
     }

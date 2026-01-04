@@ -3,36 +3,36 @@ package taskmanager;
 import java.util.ArrayList;
 import java.util.List;
 
-// Bu sınıf, görevleri bir arada tutan projeyi temsil eder
+// This class represents the project that holds tasks together
 public class Project {
 
-    // Encapsulation (private alanlar)
-    private String name;          // Proje adı
-    private List<Task> tasks;     // Projeye ait görevler
+    // Encapsulation (private fields)
+    private String name;          // Project name
+    private List<Task> tasks;     // Tasks belonging to the project
 
     // Constructor
-    // Project nesnesi oluşturulurken proje adı ve görev listesi hazırlanır
+    // The project name and task list are initialized when the Project object is created
     public Project(String name) {
         this.name = name;
         this.tasks = new ArrayList<>();
     }
 
-    // Proje adını verir
+    // Returns the project name
     public String getName() {
         return name;
     }
 
-    // Projeye görev ekler
+    // Adds a task to the project
     public void addTask(Task task) {
         tasks.add(task);
     }
 
-    // Projedeki tüm görevleri verir
+    // Returns all tasks in the project
     public List<Task> getTasks() {
         return tasks;
     }
 
-    // Yaklaşan görevleri gösterir (polymorphism ile)
+    // Displays upcoming tasks (using polymorphism)
     public void showUpcomingTasks() {
         System.out.println("Upcoming tasks in project: " + name);
 

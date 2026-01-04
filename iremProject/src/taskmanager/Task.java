@@ -1,53 +1,55 @@
 package taskmanager;
 
-// Bu sınıf, yapılacak bir görevi temsil eder
-// Task(görev) tamamlanabilir olduğu için Completable interface'ini kullanır
+// This class represents a task to be done
+// Since a Task is completable, it uses the Completable interface
 
 public class Task implements Completable {
     
     // Encapsulation (private alanlar)
-    private String title;  // Görevin adı
-    private String description;  // Görevin açıklaması
-    private boolean completed;  // Görev bitti mi bitmedi mi?
+    private String title;
+    private String description;
+    private boolean completed;
 
     // Constructor
-    // Task nesnesi oluşturulurken görev adı, açıklama ve başlangıç durumunu ayarlamak için kullanılır.
+    // Used to set the task name, description, and initial status when a Task object is created
     public Task(String title, String description) {
         this.title = title;
         this.description = description;
         this.completed = false;
     }
 
-    // Getter'lar
-    // Görevin bilgisini dışarıya vermek için kullanılır.
+    // Getters
+    // Used to expose the task information to the outside
 
-    // Görevin adını verir
+    // Returns the task name
     public String getTitle() {
         return title;
     }
 
-    // Görevin açıklamasını verir
+    // Returns the task description
     public String getDescription() {
         return description;
     }
 
-    // Görev tamamlandı mı?
-    // Boolean’larda get yerine is kullanılır (Java kuralı)
+    // Is the task completed?
+    // In booleans, `is` is used instead of `get` (Java convention)
+
     public boolean isCompleted() {
         return completed;
     }
 
-    // Normal Task'ların deadline'ı yoktur, bu yüzden upcoming değildir
+    // Normal Tasks do not have a deadline, so they are not upcoming
     public boolean isUpcoming() {
     return false;
     }
 
 
-    // Interface metodu
-    // Görevi tamamlandı olarak işaretler
+    // Interface method
+    // Marks the task as completed
+
     @Override
     public void complete() {
-        this.completed = true; //Bu görev artık tamamlandı
-        System.out.println("Görev tamamlandı: " + title); // kullanıcıya bilgi verir
+        this.completed = true; // This task has now been completed
+        System.out.println("Görev tamamlandı: " + title); // Informs the user
     }
 }
