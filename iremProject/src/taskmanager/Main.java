@@ -30,12 +30,16 @@ public class Main {
                 "Write final report",
                 "Prepare project report",
                 deadline,
-                Priority.MEDIUM
+                Priority.MEDIUM,
+                3
         );
 
         // Add tasks to the project
         project.addTask(task1);
         project.addTask(task2);
+
+        // Show task reminders
+        project.showReminders();
 
         // Mark the timed task as completed
         task2.complete();

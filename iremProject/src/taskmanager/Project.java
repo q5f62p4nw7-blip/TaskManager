@@ -54,6 +54,22 @@ public class Project {
         }
     }
 
+    public void showReminders() {
+    System.out.println("Reminders:");
+
+    for (Task task : tasks) {
+        if (task instanceof TimedTask timedTask) {
+            if (timedTask.shouldRemind()) {
+                System.out.println(
+                    "- REMINDER: " + task.getTitle() +
+                    " | Priority: " + task.getPriority()
+                );
+            }
+        }
+    }
+}
+
+
 }
 
     
