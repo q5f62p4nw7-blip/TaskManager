@@ -30,6 +30,8 @@ public class User {
 
     // Adds a new project to the user
     public void addProject(Project project) {
+         if (project != null) {
         projects.add(project);
+    }
     }
 }

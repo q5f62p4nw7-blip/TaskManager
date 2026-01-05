@@ -50,7 +50,7 @@ public class Task implements Completable {
     @Override
     public void complete() {
         this.completed = true; // This task has now been completed
-        System.out.println("Görev tamamlandı: " + title); // Informs the user
+        System.out.println("Task completed: " + title);  // Informs the user
     }
 
     
