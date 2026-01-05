@@ -18,5 +18,13 @@ public class TimedTask extends Task {
     public Deadline getDeadline() {
         return deadline;
     }
+
+    /*  Polymorphism example: this method overrides the base class implementation
+    to provide deadline-based upcoming logic for timed tasks */
+    @Override
+    public boolean isUpcoming() {
+        return deadline != null && deadline.isUpcoming();
+    }
+
 }
 
