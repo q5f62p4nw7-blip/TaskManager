@@ -9,13 +9,16 @@ public class Task implements Completable {
     private String title;
     private String description;
     private boolean completed;
+    private Priority priority;
+
 
     // Constructor
     // Used to set the task name, description, and initial status when a Task object is created
-    public Task(String title, String description) {
+    public Task(String title, String description, Priority priority) {
         this.title = title;
         this.description = description;
         this.completed = false;
+        this.priority = priority;
     }
 
     // Getters
@@ -40,7 +43,13 @@ public class Task implements Completable {
 
     // Normal Tasks do not have a deadline, so they are not upcoming
     public boolean isUpcoming() {
-    return false;
+        return false;
+    }
+
+    // Returns the priority level of the task
+    // Priority indicates how important the task is (LOW, MEDIUM, HIGH)
+    public Priority getPriority() {
+        return priority;
     }
 
 

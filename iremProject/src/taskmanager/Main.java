@@ -16,11 +16,10 @@ public class Main {
 
         // Create a normal task (without deadline)
         Task task1 = new Task(
-        "Read OOP notes",
-        "Study encapsulation and inheritance"
-       );
-
-
+          "Read OOP notes",
+          "Study encapsulation and inheritance",
+          Priority.HIGH
+        );
 
         // Create a deadline for a timed task
         Deadline deadline = new Deadline(LocalDate.now().plusDays(3));
@@ -30,7 +29,8 @@ public class Main {
         TimedTask task2 = new TimedTask(
                 "Write final report",
                 "Prepare project report",
-                deadline
+                deadline,
+                Priority.MEDIUM
         );
 
         // Add tasks to the project

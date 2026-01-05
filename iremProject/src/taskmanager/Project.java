@@ -38,7 +38,7 @@ public class Project {
 
         for (Task task : tasks) {
             if (!task.isCompleted() && task.isUpcoming()) {
-                System.out.println("- " + task.getTitle());
+                System.out.println("- " + task.getTitle() + " | Priority: " + task.getPriority());
             }
         }
     }
@@ -49,7 +49,7 @@ public class Project {
 
         for (Task task : tasks) {
             if (task.isCompleted()) {
-            System.out.println("- " + task.getTitle());
+            System.out.println("- " + task.getTitle() + " | Priority: " + task.getPriority());
             }
         }
     }
