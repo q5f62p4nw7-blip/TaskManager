@@ -1,18 +1,33 @@
-## Getting Started
+TASK MANAGER PROJECT
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+DESCRIPTION
+This project is a simple Task Manager application written in Java. It helps users organize their tasks and projects. Users can create projects, add tasks, set priorities, and mark tasks as completed. Some tasks can also have deadlines and reminders.
 
-## Folder Structure
+The main purpose of this project is to practice Object-Oriented Programming (OOP) concepts such as classes, inheritance, interfaces, encapsulation, and polymorphism.
 
-The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+FEATURES
+-Create users and projects
+-Add tasks to projects
+-Set task priorities (LOW, MEDIUM, HIGH)
+-Create tasks with deadlines
+-Show upcoming and completed tasks
+-Show reminders for timed tasks
+-Export tasks to a text file
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+TECHNOLOGIES USED
+-Java
+-Object-Oriented Programming (OOP)
 
-## Dependency Management
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+OOP CONCEPTS USED
+-Encapsulation: Private fields with getter methods
+-Inheritance: TimedTask extends Task
+-Polymorphism: Task and TimedTask used together
+-Interface: Completable interface for tasks
+
+
+AUTHOR
+Name: Irem
+Course: Object-Oriented Programming
