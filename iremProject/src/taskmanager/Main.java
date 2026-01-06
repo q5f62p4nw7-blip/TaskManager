@@ -55,5 +55,8 @@ public class Main {
         Notification notification = new Notification();
         notification.send("Program finished successfully.");
 
+        project.exportTasksToFile("tasks.txt");
+
+
     }
 }

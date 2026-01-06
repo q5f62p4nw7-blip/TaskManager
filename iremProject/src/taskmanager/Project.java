@@ -1,5 +1,7 @@
 package taskmanager;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,6 +70,36 @@ public class Project {
         }
     }
 }
+
+
+// Exports all tasks in the project to a text file
+public void exportTasksToFile(String fileName) {
+    try (FileWriter writer = new FileWriter(fileName)) {
+
+        writer.write("Project: " + name + "\n\n");
+
+        for (Task task : tasks) {
+            writer.write("Title: " + task.getTitle() + "\n");
+            writer.write("Description: " + task.getDescription() + "\n");
+            writer.write("Status: " + (task.isCompleted() ? "Completed" : "Not completed") + "\n");
+            writer.write("Priority: " + task.getPriority() + "\n");
+
+            if (task instanceof TimedTask timedTask) {
+                writer.write("Deadline: " +
+                        timedTask.getDeadline().getDueDate() + "\n");
+            }
+
+            writer.write("\n");
+        }
+
+        System.out.println("Tasks exported to file: " + fileName);
+
+    } catch (IOException e) {
+        System.out.println("Error while exporting tasks: " + e.getMessage());
+    }
+}
+
+
 
 
 }
