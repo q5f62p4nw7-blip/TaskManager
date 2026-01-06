@@ -26,7 +26,6 @@ class TimedTaskTest {
 
     @Test
     void shouldRemind_whenReminderDay() {
-        // shouldRemind(): deadline - reminderDaysBefore == today
         int reminderDaysBefore = 2;
         Deadline deadline = new Deadline(LocalDate.now().plusDays(reminderDaysBefore));
         TimedTask task = new TimedTask("T", "D", deadline, Priority.HIGH, reminderDaysBefore);

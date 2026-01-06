@@ -24,7 +24,6 @@ class DeadlineTest {
 
     @Test
     void isUpcoming_today_false() {
-        // Senin kodun isAfter(now) kullandığı için bugün false döner
         Deadline deadline = new Deadline(LocalDate.now());
         assertFalse(deadline.isUpcoming());
     }
