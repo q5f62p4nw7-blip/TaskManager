@@ -13,7 +13,7 @@ public class TimedTask extends Task {
     // Constructor
     // Sets the task details and deadline when a TimedTask is created
     public TimedTask(String title, String description, Deadline deadline, Priority priority, int reminderDaysBefore) {
-        super(title, description, priority); // The constructor of the Task class is called
+        super(title, description, priority); 
         this.deadline = deadline;
         this.reminderDaysBefore = reminderDaysBefore;
     }

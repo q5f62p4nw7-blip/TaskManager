@@ -6,8 +6,7 @@ public interface Completable {
 
     // Represents the completion process
     void complete();
-
-
+    
 }
 
 

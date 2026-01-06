@@ -50,13 +50,12 @@ public class Main {
         // Display completed tasks
         project.showCompletedTasks();
 
-
         // Send a notification (optional feature)
         Notification notification = new Notification();
         notification.send("Program finished successfully.");
 
+        // Exports all project tasks to a text file
         project.exportTasksToFile("tasks.txt");
-
 
     }
 }

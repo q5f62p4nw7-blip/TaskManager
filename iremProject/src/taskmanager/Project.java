@@ -56,6 +56,7 @@ public class Project {
         }
     }
 
+    // Shows task reminders
     public void showReminders() {
     System.out.println("Reminders:");
 
@@ -70,7 +71,6 @@ public class Project {
         }
     }
 }
-
 
 // Exports all tasks in the project to a text file
 public void exportTasksToFile(String fileName) {

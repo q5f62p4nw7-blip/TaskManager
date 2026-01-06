@@ -5,7 +5,7 @@ package taskmanager;
 
 public class Task implements Completable {
     
-    // Encapsulation (private alanlar)
+    // Encapsulation (private fields)
     private String title;
     private String description;
     private boolean completed;
@@ -20,7 +20,7 @@ public class Task implements Completable {
         this.completed = false;
         this.priority = priority;
     }
-
+    
     // Getters
     // Used to expose the task information to the outside
 
@@ -41,7 +41,7 @@ public class Task implements Completable {
         return completed;
     }
 
-    // Normal Tasks do not have a deadline, so they are not upcoming
+    // Tasks without deadlines are not considered upcoming
     public boolean isUpcoming() {
         return false;
     }
@@ -61,7 +61,5 @@ public class Task implements Completable {
         this.completed = true; // This task has now been completed
         System.out.println("Task completed: " + title);  // Informs the user
     }
-
-    
-
+ 
 }
