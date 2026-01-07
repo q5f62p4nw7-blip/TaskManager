@@ -104,8 +104,11 @@ public class Main {
                 }
 
                 case "7" -> {
-                    running = false;
-                    System.out.println("👋 Program finished.");
+                   Notification notification = new Notification();
+                   notification.send("Program finished successfully.");
+
+                   running = false;
+                   System.out.println("👋 Program finished.");
                 }
 
                 default -> {
