@@ -1,61 +1,119 @@
 package taskmanager;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
-// Main class where the program starts
 public class Main {
 
     public static void main(String[] args) {
 
-        // Create a user
-        User user = new User("Irem");
+        Scanner scanner = new Scanner(System.in);
 
-        // Create a project and add it to the user
-        Project project = new Project("OOP Task Manager");
+        // USER
+        System.out.print("Enter user name: ");
+        String userName = scanner.nextLine();
+        User user = new User(userName);
+
+        // PROJECT
+        System.out.print("Enter project name: ");
+        String projectName = scanner.nextLine();
+        Project project = new Project(projectName);
         user.addProject(project);
 
-        // Create a normal task (without deadline)
-        Task task1 = new Task(
-          "Read OOP notes",
-          "Study encapsulation and inheritance",
-          Priority.HIGH
-        );
+        boolean running = true;
 
-        // Create a deadline for a timed task
-        Deadline deadline = new Deadline(LocalDate.now().plusDays(3));
+        while (running) {
+            System.out.println("\n=== MENU ===");
+            System.out.println("1) Add task");
+            System.out.println("2) Show upcoming tasks");
+            System.out.println("3) Show completed tasks");
+            System.out.println("4) Show reminders");
+            System.out.println("5) Complete a task");
+            System.out.println("6) Export tasks to file");
+            System.out.println("7) Exit");
+            System.out.print("Choose: ");
 
+            String choice = scanner.nextLine();
 
-        // Create a timed task (task with deadline)
-        TimedTask task2 = new TimedTask(
-                "Write final report",
-                "Prepare project report",
-                deadline,
-                Priority.MEDIUM,
-                3
-        );
+            switch (choice) {
 
-        // Add tasks to the project
-        project.addTask(task1);
-        project.addTask(task2);
+                case "1" -> {
+                    // ADD TASK
+                    System.out.print("Task title: ");
+                    String title = scanner.nextLine();
 
-        // Show task reminders
-        project.showReminders();
+                    System.out.print("Task description: ");
+                    String description = scanner.nextLine();
 
-        // Mark the timed task as completed
-        task2.complete();
+                    System.out.print("Priority (LOW, MEDIUM, HIGH): ");
+                    Priority priority =
+                            Priority.valueOf(scanner.nextLine().toUpperCase());
 
-        // Display upcoming (not completed) tasks
-        project.showUpcomingTasks();
+                    System.out.print("Does this task have a deadline? (yes/no): ");
+                    String hasDeadline = scanner.nextLine();
 
-        // Display completed tasks
-        project.showCompletedTasks();
+                    if (hasDeadline.equalsIgnoreCase("yes")) {
+                        System.out.print("Days until deadline: ");
+                        int days = Integer.parseInt(scanner.nextLine());
 
-        // Send a notification (optional feature)
-        Notification notification = new Notification();
-        notification.send("Program finished successfully.");
+                        System.out.print("Reminder days before deadline: ");
+                        int remindDays = Integer.parseInt(scanner.nextLine());
 
-        // Exports all project tasks to a text file
-        project.exportTasksToFile("tasks.txt");
+                        Deadline deadline =
+                                new Deadline(LocalDate.now().plusDays(days));
 
+                        TimedTask timedTask = new TimedTask(
+                                title,
+                                description,
+                                deadline,
+                                priority,
+                                remindDays
+                        );
+
+                        project.addTask(timedTask);
+
+                    } else {
+                        Task task = new Task(title, description, priority);
+                        project.addTask(task);
+                    }
+
+                    System.out.println("✅ Task added successfully!");
+                }
+
+                case "2" -> {
+                    project.showUpcomingTasks();
+                }
+
+                case "3" -> {
+                    project.showCompletedTasks();
+                }
+
+                case "4" -> {
+                    project.showReminders();
+                }
+
+                case "5" -> {
+                    project.listAllTasks();
+                    System.out.print("Enter task number to complete: ");
+                    int num = Integer.parseInt(scanner.nextLine());
+                    project.completeTask(num);
+                }
+
+                case "6" -> {
+                    project.exportTasksToFile("tasks.txt");
+                }
+
+                case "7" -> {
+                    running = false;
+                    System.out.println("👋 Program finished.");
+                }
+
+                default -> {
+                    System.out.println("❌ Invalid choice.");
+                }
+            }
+        }
+
+        scanner.close();
     }
 }

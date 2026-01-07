@@ -99,6 +99,37 @@ public void exportTasksToFile(String fileName) {
     }
 }
 
+public void listAllTasks() {
+    System.out.println("All tasks in project: " + name);
+
+    if (tasks.isEmpty()) {
+        System.out.println("(No tasks yet)");
+        return;
+    }
+
+    for (int i = 0; i < tasks.size(); i++) {
+        Task task = tasks.get(i);
+        System.out.println(
+            (i + 1) + ") " +
+            task.getTitle() +
+            " | " +
+            (task.isCompleted() ? "Completed" : "Not completed") +
+            " | Priority: " +
+            task.getPriority()
+        );
+    }
+}
+
+public void completeTask(int taskNumber) {
+    int index = taskNumber - 1;
+
+    if (index < 0 || index >= tasks.size()) {
+        System.out.println("❌ Invalid task number.");
+        return;
+    }
+
+    tasks.get(index).complete();
+}
 
 
 
